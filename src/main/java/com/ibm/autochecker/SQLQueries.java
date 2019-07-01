@@ -3,7 +3,7 @@ package com.ibm.autochecker;
 class SQLQueries {
 
     String sql1() {
-        String sqlQuery = "SELECT * FROM PARCLIENTARC";
+        String sqlQuery = "SELECT * FROM COMPANY";
 
         return sqlQuery;
     }

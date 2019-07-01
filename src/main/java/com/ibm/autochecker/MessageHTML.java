@@ -10,7 +10,7 @@ public class MessageHTML {
     private Integer BUSERVICEON;
 
 
-    MessageHTML(String currency, String emailadmin, String pollingemail, String smtpserver, Integer mserviceouton, Integer buserviceini, Integer buserviceon){
+    MessageHTML(String currency, String emailadmin, String pollingemail, String smtpserver, Integer mserviceouton, Integer buserviceini, Integer buserviceon) {
         CURRENCY = currency;
         EMAILADMIN = emailadmin;
         POLLINGEMAIL = pollingemail;
@@ -47,4 +47,12 @@ public class MessageHTML {
     public Integer getBUSERVICEON() {
         return BUSERVICEON;
     }
+
+
+    public void message() {
+        if (CURRENCY == "EUR");
+
+    }
+
+
 }
