@@ -17,7 +17,6 @@ public class SQLiteJDBC {
             stmt = c.createStatement();
 
             SQLQueries SQLQueries = new SQLQueries();
-            SQLQueries.sql1();
 
             ResultSet rs = stmt.executeQuery(SQLQueries.sql1());
 
@@ -34,6 +33,7 @@ public class SQLiteJDBC {
                 System.out.println( "ADDRESS = " + address );
                 System.out.println( "SALARY = " + salary );
                 System.out.println();
+
             }
             rs.close();
             stmt.close();

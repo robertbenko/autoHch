@@ -14,13 +14,13 @@ public class SendEmail {
 
     public void sendEmail() {
 
-        String to = "robert.benko@pl.ibm.com";
+        String to = "robert.benko@gmail.com";
         //String cc = "robert.benko@pl.ibm.com";
 
         // Sender's email ID needs to be mentioned
         String from = "antoniopanterass@gmail.com";
-        final String username = "xx";
-        final String password = "xx";
+        final String username = "antoniopanterass";
+        final String password = "AutoChecker!305";
 
         String host = "smtp.gmail.com";
 
