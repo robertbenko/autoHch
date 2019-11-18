@@ -74,8 +74,7 @@ class SQLRunner {
                         "\t" + SMTPSERVER + "\t" + MSERVICEOUTON +
                         "\t" + BUSERVICEINI + "\t" + BUSERVICEON);
 
-                MessageHTML messageHTML = new MessageHTML(CURRENCY, EMAILADMIN, POLLINGEMAIL, SMTPSERVER, MSERVICEOUTON, BUSERVICEINI, BUSERVICEON);
-                //wiem, ze powyzszy konstruktor przekaze do MessageHTML tylko ostatni wpis/wiersz z tabeli, pytanie czy to jest dobry kierunek?
+     //           Employee employee = new Employee(CURRENCY, EMAILADMIN, POLLINGEMAIL, SMTPSERVER, MSERVICEOUTON, BUSERVICEINI, BUSERVICEON);
             }
 
         } catch (SQLException ex) {

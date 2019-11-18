@@ -10,15 +10,15 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class SendEmail {
+class EmailService {
 
-    public void sendEmail() {
+    void sendEmail(
+            final String title,
+            final String messageHtmlBody) {
 
-        String to = "robert.benko@gmail.com";
-        //String cc = "robert.benko@pl.ibm.com";
-
-        // Sender's email ID needs to be mentioned
-        String from = "antoniopanterass@gmail.com";
+        final String to = "robert.benko@gmail.com";
+        //String cc = "robert.benko@gmail.com";
+        final String from = "antoniopanterass@gmail.com";
         final String username = "antoniopanterass";
         final String password = "AutoChecker!305";
 
@@ -39,26 +39,15 @@ public class SendEmail {
 
         try {
             Message message = new MimeMessage(session);
-
             message.setFrom(new InternetAddress(from));
-
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(to));
-
 //            message.setRecipients(Message.RecipientType.CC,
 //                    InternetAddress.parse(cc));
-
-            message.setSubject("Mail Testowy");
-
-            message.setContent(
-                    "<h2>To jest mail ze skryptu</h2><br><br>" +
-                            "<font color=\"red\">Robert</font>","text/html"
-            );
-
+            message.setSubject(title);
+            message.setContent(messageHtmlBody,"text/html");
             Transport.send(message);
-
             System.out.println("Sent message successfully....");
-
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }

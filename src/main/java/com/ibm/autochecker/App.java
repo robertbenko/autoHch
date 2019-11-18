@@ -11,10 +11,9 @@ public class App {
 //        sqlRunner.DBclose();
 
         SQLiteJDBC sqLiteJDBC = new SQLiteJDBC();
-        SQLiteJDBC.SQLrun();
+        SQLiteJDBC.getAllEmployees();
 
-
-        SendEmail sendEmail = new SendEmail();
-        sendEmail.sendEmail();
+        EmailService sendEmail = new EmailService();
+        //sendEmail.sendEmail();
     }
 }
