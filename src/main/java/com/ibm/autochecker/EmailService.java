@@ -12,12 +12,11 @@ import javax.mail.internet.MimeMessage;
 
 class EmailService {
 
-    void sendEmail(
-            final String title,
+    static void sendEmail(
             final String messageHtmlBody) {
 
+        final String title = "All employees report";
         final String to = "robert.benko@gmail.com";
-        //String cc = "robert.benko@gmail.com";
         final String from = "antoniopanterass@gmail.com";
         final String username = "antoniopanterass";
         final String password = "AutoChecker!305";
@@ -42,8 +41,6 @@ class EmailService {
             message.setFrom(new InternetAddress(from));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(to));
-//            message.setRecipients(Message.RecipientType.CC,
-//                    InternetAddress.parse(cc));
             message.setSubject(title);
             message.setContent(messageHtmlBody,"text/html");
             Transport.send(message);

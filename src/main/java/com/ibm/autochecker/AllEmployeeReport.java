@@ -1,21 +1,15 @@
 package com.ibm.autochecker;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.function.Supplier;
 
-public  class AllEmployeeReport {
-
-    private static final String REPORT_MAIL_TITLE = "All companies report";
+class AllEmployeeReport {
 
     private final String html;
 
     static AllEmployeeReport create(
-            final List<Employee> employees,
-            final Supplier<LocalDateTime> currentTimeSupplier) {
+            final List<Employee> employees) {
         final StringBuilder htmlBuilder = new StringBuilder(
-                "<h2>All companies report</h2><br/>" +
-                        "<b>Created at:</b> " + currentTimeSupplier.get() + "<br/><br/>"
+                "<h2>All companies report</h2><br/>"
         );
         htmlBuilder.append("<ul>");
         for (final Employee employee : employees) {
@@ -32,13 +26,11 @@ public  class AllEmployeeReport {
 
         return new AllEmployeeReport(htmlBuilder.toString());
     }
-
-    public AllEmployeeReport(final String html) {
+    private AllEmployeeReport(final String html) {
         this.html = html;
     }
 
-    void send(
-            final EmailService emailService) {
-        emailService.sendEmail(REPORT_MAIL_TITLE, html);
+    String getHtml() {
+        return html;
     }
 }

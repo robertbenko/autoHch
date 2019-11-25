@@ -1,14 +1,12 @@
 package com.ibm.autochecker;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 class SQLiteJDBC {
 
-    public static List<Employee> getAllEmployees() {
+    static List<Employee> getAllEmployees() {
 
         Connection connection = null;
         Statement statement = null;
@@ -34,7 +32,7 @@ class SQLiteJDBC {
                 allEmployees.add(employee);
             }
             return allEmployees;
-            
+
         } catch (final SQLException e) {
             throw new RuntimeException("unexpected database error", e);
         } finally {

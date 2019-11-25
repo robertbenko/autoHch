@@ -53,10 +53,7 @@ class SQLRunner {
 
     void runSQLQuery() throws SQLException {
         try {
-            SQLQueries SQLQueries = new SQLQueries();
-            SQLQueries.sql1();
-
-            rs = stmt.executeQuery(SQLQueries.sql1());
+            ResultSet rs = stmt.executeQuery("SELECT * FROM COMPANY");
 
             while (rs.next()) {
 

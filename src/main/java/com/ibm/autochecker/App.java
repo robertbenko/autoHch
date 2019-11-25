@@ -1,19 +1,12 @@
 package com.ibm.autochecker;
 
-import java.sql.SQLException;
+import java.util.List;
 
 public class App {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
-//        SQLRunner sqlRunner = new SQLRunner();
-//        sqlRunner.DBconnect();
-//        sqlRunner.runSQLQuery();
-//        sqlRunner.DBclose();
-
-        SQLiteJDBC sqLiteJDBC = new SQLiteJDBC();
-        SQLiteJDBC.getAllEmployees();
-
-        EmailService sendEmail = new EmailService();
-        //sendEmail.sendEmail();
+        List<Employee> employeeList = SQLiteJDBC.getAllEmployees();
+        AllEmployeeReport report = AllEmployeeReport.create(employeeList);
+        EmailService.sendEmail(report.getHtml());
     }
 }
